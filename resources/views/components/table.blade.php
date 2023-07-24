@@ -12,11 +12,11 @@
                     <td> {{ $cell }} </td>
                 @endforeach
                 <td>
-                    <button class="btn btn-warning">
-                        edit
+                    <button class="btn btn-sm btn-warning rounded-circle">
+                        <i class="fa-solid fa-pencil"></i>
                     </button>
-                    <button class="btn btn-danger">
-                        delete
+                    <button class="btn btn-sm btn-danger rounded-circle">
+                        <i class="fa-solid fa-trash"></i>
                     </button>
                 </td>
             </tr>

@@ -11,7 +11,7 @@ class Task extends Model
 {
     use HasFactory;
 
-    public function getTableColumns()
+    public function getTableColumns($exceptions = [])
     {
         $tableName = $this->getTable();
 
@@ -22,8 +22,8 @@ class Task extends Model
             ORDER BY ORDINAL_POSITION
         ");
 
-        $columnNames = array_map(function ($column) {
-            return $column->COLUMN_NAME;
+        $columnNames = array_map(function ($column) use ($exceptions) {
+            if (!in_array($column->COLUMN_NAME, $exceptions)) return $column->COLUMN_NAME;
         }, $columnNames);
 
         return $columnNames;

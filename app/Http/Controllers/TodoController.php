@@ -12,7 +12,7 @@ class TodoController extends Controller
     {
         $task = new Task;
         $values = Task::all()->toArray();
-        $columns = $task->getTableColumns(); // parameter is an array of exception column names
+        $columns = $task->getTableColumns(['created_at', 'updated_at']); // parameter is an array of exception column names
         return view('tasks/todo')->with([
             'columns' => $columns,
             'values' => $values

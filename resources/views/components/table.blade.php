@@ -4,7 +4,7 @@
             @foreach( $columns as $column )
                 <th>{{ $column }}</th>
             @endforeach
-            <th>Actions</th>
+            <th>actions</th>
         </tr>
         @foreach($values as $row)
             <tr>
